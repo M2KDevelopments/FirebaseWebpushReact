@@ -3,7 +3,8 @@ import './App.css';
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getMessaging, getToken } from "firebase/messaging";
+import { getMessaging, getToken, onMessage } from "firebase/messaging";
+import { useEffect } from 'react';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -27,10 +28,24 @@ const validKey = "BHDtR776Q2R87YNRn0VhtO6OIe0IB2UauPYeRBiw06x_p7BAkGn3_S_ScLzQVy
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
+// Initialize Firebase Cloud Messaging and get a reference to the service
+const messaging = getMessaging(app);
+
+
 
 // https://firebase.google.com/docs/cloud-messaging/js/client#configure_web_credentials_in_your_app
 
 function App() {
+
+
+  useEffect(() => {
+    onMessage(messaging, (payload) => {
+      console.log(payload);
+      alert(payload.notification.title + "\n" + payload.notification.body)
+    })
+  }, [])
+
+
 
   async function requestPermission() {
     console.log('Requesting permission...');
@@ -45,9 +60,7 @@ function App() {
     const accepted = requestPermission();
 
     if (accepted) {
-      
-      // Initialize Firebase Cloud Messaging and get a reference to the service
-      const messaging = getMessaging(app);
+
 
       getToken(messaging, { vapidKey: validKey }).then((currentToken) => {
         if (currentToken) {
