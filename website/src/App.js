@@ -3,7 +3,7 @@ import './App.css';
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getMessaging, getToken, onMessage } from "firebase/messaging";
+import { getToken, onMessage, getMessaging, } from "firebase/messaging";
 import { useEffect } from 'react';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -66,7 +66,7 @@ function App() {
         if (currentToken) {
           // Send the token to your server and update the UI if necessary
           // ...
-          console.log(currentToken);
+          console.log({ currentToken });
         } else {
           // Show permission request UI
           console.log('No registration token available. Request permission to generate one.');
