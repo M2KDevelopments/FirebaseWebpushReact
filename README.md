@@ -6,7 +6,16 @@ How to use Firebase Webpush notification with React. All the frontend code is in
 ## How it works
 The first thing you need to do is
 <ol>
-    <li>Install firebase npm package and define it in your project you can see <a href="./website//src/App.js">App.js</a></li>
+    <li>Install firebase npm package and define it in your project you can see <a href="./website//src/App.js">App.js</a>
+    </li>
+    <li>
+        Replace the firebaseConfig in <a href="./website//src/App.js">App.js</a> and in <a href="./website/public/firebase-messaging-sw.js">firebase-messaging-sw.js</a> with your own firebase project.
+    </li>
+    <li>
+        Replace the <b>validKey</b> in <a href="./website//src/App.js">App.js</a>. Valid key are created <a href="https://firebase.google.com/docs/cloud-messaging/js/receive">here.</a>
+        <img src="./website//public/Screenshot1.png">
+        <img src="./website//public/Screenshot2.png">
+    </li>
     <li>
         Request for notification permission
         <pre>

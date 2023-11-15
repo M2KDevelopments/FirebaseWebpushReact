@@ -11,19 +11,19 @@ import { useEffect } from 'react';
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyAVwA4Qr0UU9OMHF2lSV80XwSab8ur9LPE",
-  authDomain: "m2kdevs.firebaseapp.com",
-  databaseURL: "https://m2kdevs.firebaseio.com",
-  projectId: "m2kdevs",
-  storageBucket: "m2kdevs.appspot.com",
-  messagingSenderId: "780886334097",
-  appId: "1:780886334097:web:a3900b2a47094b618bfd30",
-  measurementId: "G-QQSW68F957"
+  apiKey: "",
+  authDomain: "",
+  databaseURL: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: "",
+  measurementId: ""
 };
 
 //https://firebase.google.com/docs/cloud-messaging/js/client#configure_web_credentials_in_your_app
 //https://www.youtube.com/watch?v=9EAgvpWujsw
-const validKey = "BHDtR776Q2R87YNRn0VhtO6OIe0IB2UauPYeRBiw06x_p7BAkGn3_S_ScLzQVyeeCfgxEIJMAlbC3jFoVj-nAfc"
+const validKey = ""
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
